@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" , href="{% static 'main/styles.css' %}    ?{% now 'U' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans:wght@700&family=Kanit:ital,wght@0,300;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <header><span style="color: green;">ZIOŁO</span><span style="color: #da05ff;">ONLINE</span></header>
+        </div>
+        <div class="menu">
+            <nav>
+                <ol>
+                    <li><a href="#">Strona Główna</a></li>
+                    <li><a href="#">Gdzie kupić?</a>
+                        <ul>
+                            <li><a href="#">WIEJSKI MARKET</a></li>
+                            <li><a href="#">BAZAR</a></li>
+                            <li><a href="#">SIEĆ DARKNET</a></li>
+                            <li><a href="#">FABRYKA LINT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Zielnik</a>
+                        <ul>
+                            <li><a href="#">PRYMAT</a></li>
+                            <li><a href="#">KAMIS</a></li>
+                            <li><a href="#">SPINACH</a></li>
+                            <li><a href="#">ROZLUŹNIACZ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Niebezpieczeństwa</a>
+                        <ul>
+                            <li><a href="#">SOLE TRZEŹWIĄCE</a></li>
+                            <li><a href="#">PIERDOLE MĄKĘ</a></li>
+                            <li><a href="#">WODOROSTY</a></li>
+                            <li><a href="#">ŻYCIE UTRUDNIAĆ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kontakt</a></li>
+                    <dev style="clear: both;"></dev>
+                </ol>
+            </nav>
+        </div>
+        <div class="main_part">
+            <div class="ad">
+                <img src="{% static 'main/ad.jpg' %}">
+            </div>
+            <div class='articles'>
+                <main>
+                    {%for article in articles%}
+                    <h1>{{ article.title }} | <span style="font-size: 20px;">{{article.date}}</span></h1>
+
+                    {{article.description}}
+                    {% endfor %}
+                </main>
+            </div>
+            <div class="ad">
+                <img src="{% static 'main/ad.jpg' %}">
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="footer">
+
+        <div class="icon1">
+            <div id="overlayG">
+                <span class="material-symbols-outlined" style="font-size: 200px;">
+                    thumb_up
+                </span>
+            </div>
+        </div>
+        <div class="icon2" style="margin-left: auto; margin-right: auto;">
+            <span class="material-symbols-outlined" style="font-size: 200px;">
+                thumbs_up_down
+            </span>
+        </div>
+        <div class="icon3">
+            <span class="material-symbols-outlined" style="font-size: 200px;">
+                thumb_down
+            </span>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+
+</html>
